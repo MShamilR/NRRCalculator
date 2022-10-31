@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <label for="matchOvers">Over per innings</label>
+        <input type="nummber" id="matchOvers" placeholder="Enter Overs" class="defOPI">
+        <label>
+      </fieldset>
+    
+      <fieldset>
+        <label>
+          Your Team
+          <input type="number" placeholder="Enter Score" class="defYTS"/>
+        </label>
+        <label>
+          Overs
+          <input type="number" placeholder="Enter Overs" class="defYTO"/>
+        </label>
+        <p>Is All Out?</p>
+        <label for="yes">Yes</label>
+        <input type="radio" name="defBowledYT" id="yes"  />
+        <label for="no">No</label>
+        <input type="radio" name="defBowledYT" id="no"  />
+      </fieldset>
+
+      <fieldset>
+        <label>
+          Your Opponent
+          <input type="number" placeholder="Enter Score" class="defYOS"/>
+        </label>
+        <label>
+          Overs
+          <input type="number" placeholder="Enter Overs" class="defYOO"/>
+        </label>
+        <p>Is All Out?</p>
+        <label for="yes">Yes</label>
+        <input type="radio" name="defBowledYO" id="yes"  />
+        <label for="no">No</label>
+        <input type="radio" name="defBowledYO" id="no"  />
+      </fieldset>
+      <button onclick="defNRR()">Calculate NRR</button>
+    </form>
+
+    <form>
+    <h2>Abandoned game with retrospective DLS result</h2>
+    <fieldset>
+      <p>Who batted first?</p>
+      <label for="yourTeam">Your Team</label>
+      <input type="radio" name="wBF" id="yourTeam"  />
+      <label for="yourOpponent">Your Opponent</label>
+      <input type="radio" name="wBF" id="yourOpponent"  />
+    </fieldset>
+
+    <fieldset>
+     <label>
+     DLS par score
+     <input type="number" placeholder="Enter Score" />
+    </label>
+    <label>
+     In Overs
+     <input type="number" placeholder="In overs" />
+    </label>
+    <label>Runs scored by team batting second when match was abandoned
+      <input type="number" placeholder="Enter score" />
+    </label>
+    </fieldset>
+    <button>Calculate NRR</button>
+      
+    </form>
+    <form>
+      <h2>Revised DLS target</h2>
+      <fieldset>
+      <p>Who batted first?</p>
+      <label for="yourTeam">Your Team</label>
+      <input type="radio" name="wBF" id="yourTeam" name="Your Team" />
+      <label for="yourOpponent">Your Opponent</label>
+      <input type="radio" name="wBF" id="yourOpponent" name="Your Opponent" />
+    </fieldset>
+    
+       <fieldset>
+     <label>
+     Revised Target
+     <input type="number" placeholder="Enter target" />
+    </label>
+    <label>
+     In Overs
+     <input type="number" placeholder="Enter overs" />
+    </label>
+    <label>Runs scored by team batting second
+      <input type="number" placeholder="Enter score" />
+    </label>
+    <label>
+     In Overs
+     <input type="number" placeholder="Enter overs" />
+    </label>
+    <p>Is All Out?</p>
+        <label for="yes">Yes</label>
+        <input type="radio" name="isAllOut" id="yes" name="Yes" />
+        <label for="no">No</label>
+        <input type="radio" name="isAllOut" id="no" name="No" />
+    </fieldset>
+    <button>Calculate NRR</button>
+    </form>
+
+    <!-- <p>Is All Out?</p>
+        
+      <input type="radio" name="defBowledYT" id="yes" name="Yes" />
+        <label for="no">No</label>
+        <input type="radio" name="defBowledYT" id="no" name="No"> -->
+<script src="index.js"></script>
+  </body>
+</html>
+
