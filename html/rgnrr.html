@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>NRR | Revised game</title>
+</head>
+
+<body>
+    <div class="bodyCont">
+        <div class="altCalc">
+
+            <button onclick="window.location.href = '../index.html'">🡨&nbsp;&nbsp;&nbsp;&nbsp;Back to Default NRR
+                Calculator</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <button onclick="window.location.href = 'agnrr.html'">Calculate NRR of an abandoned game</button>
+
+        </div>
+
+        <h2>Revised DLS target</h2>
+        <fieldset class="recheckField">
+        </fieldset>
+        <form onsubmit="return false">
+            <fieldset>
+                <label class="marginRight">
+                    Revised Target
+                    <input type="number" placeholder="Enter target" class="rgTarget" />
+                </label>
+                &nbsp;
+                <label>
+                    Revised Overs
+                    <input type="number" placeholder="Enter overs" class="rgOvers"
+                        onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls)" />
+                </label>
+            </fieldset>
+
+            <fieldset>
+                <p class="rH">Who batted first?&nbsp;<span class="required1">
+                    </span></p>
+
+                <label for="yourTeam">Your Team</label>
+                <input type="radio" name="wBF" id="yourTeam" onchange="removeRequired1()"/>
+
+                &nbsp;
+
+                <label for="yourOpponent">Your Opponent</label>
+                <input type="radio" name="wBF" id="yourOpponent" onchange="removeRequired1()" />
+
+            </fieldset>
+
+            <fieldset>
+                <label class="marginRight">Runs scored by team batting second
+                    <input type="number" placeholder="Enter score" class="rgTBSScore" />
+                </label>
+                <label class="marginRight">
+                    In Overs
+                    <input type="number" placeholder="Enter overs" class="rgTBSOvers" onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls)"/>
+                </label>
+                <label class="balls1">
+                    Balls
+                    <select class="rgTBSBalls marginRight" required>
+                        <option value="" disabled hidden selected>Select Balls</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </label>
+                <div class="radio radio1">
+                    <p class="rH">Is All Out?&nbsp;<span class="required2"></span></p>
+
+                    <label for="yes">Yes</label>
+                    <input type="radio" name="rgBowledTBS" id="yes" onchange="removeRequired2()" />
+
+                    &nbsp;
+
+                    <label for="no">No</label>
+                    <input type="radio" name="rgBowledTBS" id="no" onchange="removeRequired2()"/>
+                </div>
+
+            </fieldset>
+
+            <button onclick="rgNRR();checkEmpty()" class="calc">Calculate NRR</button>
+            &nbsp;
+            <input type="reset" value="Reset" onclick="removeClass()">
+        </form>
+
+        <div class="defAppend">
+            <h4 class="defChild defh4">
+
+            </h4>
+            <h2 class="defChild defh1">
+
+            </h2>
+        </div>
+    </div>
+
+
+    <footer>
+        <container>
+            <a href="https://en.wikipedia.org/wiki/Net_run_rate" class="fItem fItem1" target="_blank"
+                rel="noopener noreferrer">
+                <h3 class="seeRates">NRR explained</h3>
+            </a>
+            <p class="pAbsolute fItem fItem2">💚 Coded with passion 💚</p>
+            <a href="https://www.linkedin.com/in/mhdshamil/" class="fItem fItem3" target="_blank"
+                rel="noopener noreferrer">
+                <div class="linkedIn fItem">
+                    <p class="contact ">Contact me on</p>
+                    <img src="../imgs/linkedIn.png">
+                </div>
+            </a>
+        </container>
+    </footer>
+
+    <script src="../js/rgNRR.js"></script>
+</body>
+
+</html>

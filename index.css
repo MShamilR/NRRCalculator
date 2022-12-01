@@ -1,0 +1,250 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    accent-color: #737373;
+}
+
+
+.recheckField {
+    background-color: red;
+    display: none
+}
+
+.recheck{
+    margin: 0;
+    color: white;
+}
+
+fieldset {
+    margin: 1rem 0;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+}
+
+.bodyCont {
+    width: calc(100% - 2rem);
+    max-width: calc(1100px - 2rem);
+    margin: auto;
+    /* padding-bottom: calc(100% - 7rem); */
+    margin-bottom: 8rem;
+    /* height: 100vh; */
+}
+
+.altCalc {
+    font-weight: 700;
+    color: #737373;
+    width: 100%;
+    max-width: calc(1100px - 2rem);
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.altCalc button {
+    flex-grow: 1;
+    flex-basis: 0;
+    font-weight: 700;
+    background-color: #737373;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: white;
+    
+}
+
+
+
+/* html {
+    overflow: hidden;
+} */
+
+container {
+    width: calc(100% - 2rem);
+    max-width: calc(1100px - 2rem);
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    height: inherit;
+    align-items: center;
+    position: relative;
+}
+
+.pAbsolute {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0.5rem);
+    font-weight: 700;
+    color: #d9d9d9;
+    margin: 0;
+}
+
+footer {
+    background-color: #737373;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 7rem;
+}
+
+.seeRates,
+.linkedIn {
+    background-color: #d9d9d9;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 0;
+}
+
+.linkedIn {
+    display: flex;
+}
+
+.fItem {
+    align-items: center;
+}
+
+.contact {
+    margin: 0;
+    font-weight: 700;
+    padding-right: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    height: 1.5rem;
+    width: auto;
+}
+
+button {
+    padding: 0.2rem;
+    cursor: pointer;
+}
+
+.calc,
+input[type="reset"] {
+    padding: 0.5rem;
+    border: none;
+    background-color: #737373;
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: 700;
+}
+
+input[type="reset"] {
+    background-color: #d9d9d9;
+    color: #737373;
+}
+
+.rH {
+    margin: 0;
+    font-weight: 700;
+}
+
+input[type="radio"] {
+    margin: 0;
+}
+
+
+
+input[type="number"],
+select {
+    font-weight: 700;
+    color: #737373;
+    padding: 0.2rem;
+    padding-left: 0.4rem;
+    border: none;
+    border-radius: 0.5rem;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    background-color: white;
+}
+
+input[type="number"].error {
+    color: red;
+}
+
+select:invalid {
+    font-weight: 400;
+    color: #737373;
+}
+
+.selectBalls:invalid {
+    font-weight: 500;
+    color: red
+}
+
+input::placeholder {
+    font-weight: 400;
+    color: #737373;
+    /* color: red;
+    opacity: 1; */
+}
+
+/* option[value="0"],option[value="1"],option[value="2"],option[value="3"],option[value="4"],option[value="5"] */
+option {
+    font-weight: 700;
+    color: #737373;
+}
+
+.emptyField::placeholder {
+    font-weight: 500;
+    color: red;
+    opacity: 1;
+}
+
+.required1,
+.required2 {
+    display: inline;
+    color: red;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+label {
+    margin: 0.25rem 0;
+    display: inline-block;
+}
+
+.marginRight {
+    margin-right: 1rem;
+}
+
+.radio {
+    margin-top: 0.25rem;
+}
+
+.radio label {
+    margin: 0;
+}
+
+.defAppend {
+    display: flex;
+    align-items: center;
+}
+
+.defh1 {
+    margin-left: 0.5rem;
+    /* background-color: red; */
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+}
+
+@media only screen and (max-width: 560px) {
+    .pAbsolute {
+        display: block;
+        transform: translate(-50%, 3.5rem);
+        width: 100%;
+        text-align: center;
+    }
+
+    container {
+        align-items: flex-start;
+        padding-top: 1rem;
+    }
+}
