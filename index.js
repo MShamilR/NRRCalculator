@@ -18,6 +18,16 @@ const balls2 = document.querySelector(".balls2");
 const radio1 = document.querySelector(".radio1");
 const radio2 = document.querySelector(".radio2");
 
+function isNumberKey(evt) {
+  var charCode = evt.which ? evt.which : evt.keyCode;
+  if (
+    (charCode > 31 && (charCode < 48 || charCode > 57)) ||
+    (evt.target.value.length == 0 && evt.which == 48)
+  )
+    return false;
+  return true;
+}
+
 const removeRequired1 = () => {
   required1.textContent = "";
 };

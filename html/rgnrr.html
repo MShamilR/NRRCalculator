@@ -30,13 +30,13 @@
             <fieldset>
                 <label class="marginRight">
                     Revised Target
-                    <input type="number" placeholder="Enter target" class="rgTarget" />
+                    <input type="number" placeholder="Enter target" class="rgTarget" onkeypress="return isNumberKey(event)"/>
                 </label>
                 &nbsp;
                 <label>
                     Revised Overs
                     <input type="number" placeholder="Enter overs" class="rgOvers"
-                        onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls)" />
+                        onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls)" onkeypress="return isNumberKey(event)"/>
                 </label>
             </fieldset>
 
@@ -56,11 +56,11 @@
 
             <fieldset>
                 <label class="marginRight">Runs scored by team batting second
-                    <input type="number" placeholder="Enter score" class="rgTBSScore" />
+                    <input type="number" placeholder="Enter score" class="rgTBSScore" onkeypress="return isNumberKey(event)"/>
                 </label>
                 <label class="marginRight">
                     In Overs
-                    <input type="number" placeholder="Enter overs" class="rgTBSOvers" onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls)"/>
+                    <input type="number" placeholder="Enter overs" class="rgTBSOvers" onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls)" onkeypress="return isNumberKey(event)"/>
                 </label>
                 <label class="balls1">
                     Balls

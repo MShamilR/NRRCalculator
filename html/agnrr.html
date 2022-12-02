@@ -30,7 +30,7 @@
                 <p class="rH">Who batted first?&nbsp;<span class="required1">
                 </span></p>
                 <label for="yourTeam">Your Team</label>
-                <input type="radio" name="wBF" id="yourTeam" onchange="removeRequired1()"/>
+                <input type="radio" name="wBF" id="yourTeam" onchange="removeRequired1()" />
                 &nbsp;
                 <label for="yourOpponent">Your Opponent</label>
                 <input type="radio" name="wBF" id="yourOpponent" onchange="removeRequired1()"/>
@@ -39,11 +39,11 @@
             <fieldset>
                 <label class="marginRight">
                     DLS par score
-                    <input type="number" placeholder="Enter Score" class="dlsPar" />
+                    <input type="number" placeholder="Enter Score" class="dlsPar" onkeypress="return isNumberKey(event)" />
                 </label>
                 <label class="marginRight">
                     In Overs
-                    <input type="number" placeholder="In overs" class="agOvers" />
+                    <input type="number" placeholder="In overs" class="agOvers" onkeypress="return isNumberKey(event)" />
                 </label>
                 <label>
                     & Balls
@@ -60,7 +60,7 @@
             </fieldset>
             <fieldset>
                 <label>Runs scored by team batting second when match was abandoned
-                    <input type="number" placeholder="Enter score" class="agTBS" />
+                    <input type="number" placeholder="Enter score" class="agTBS" onkeypress="return isNumberKey(event)" />
                 </label>
             </fieldset>
             <button onclick="agNRR();checkEmpty()" class="calc">Calculate NRR</button>

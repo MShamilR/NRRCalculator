@@ -14,6 +14,16 @@ const radio1 = document.querySelector(".radio1");
 const recheckField = document.querySelector(".recheckField");
 const recheckText = document.querySelector(".recheck");
 
+function isNumberKey(evt) {
+  var charCode = evt.which ? evt.which : evt.keyCode;
+  if (
+    (charCode > 31 && (charCode < 48 || charCode > 57)) ||
+    (evt.target.value.length == 0 && evt.which == 48)
+  )
+    return false;
+  return true;
+}
+
 const checkEmpty = () => {
   required1.style.display = "inline";
   required1.textContent = "";
@@ -136,10 +146,7 @@ const rgNRR = () => {
     }
   }
 
-  if (
-    wBFs[0].checked === false &&
-    wBFs[1].checked === false
-  ) {
+  if (wBFs[0].checked === false && wBFs[1].checked === false) {
     return;
   }
 
@@ -156,9 +163,7 @@ const rgNRR = () => {
     return;
   }
 
-  if (
-    parseFloat(rgTBSOvers.value) > parseFloat(rgOvers.value)
-  ) {
+  if (parseFloat(rgTBSOvers.value) > parseFloat(rgOvers.value)) {
     recheckField.style.display = "block";
     recheckField.innerHTML =
       "<p class='recheck'><strong>Are you sure you didn't mistype anything?</strong><br> Overs faced by the 'team batting second' cannot be greater than the 'Revised Overs'</p>";
@@ -188,11 +193,19 @@ const rgNRR = () => {
     recheckField.style.display = "block";
     return;
   }
+  if (parseFloat(rgTBSScore.value) > parseFloat(runs) + parseFloat(6)) {
+    console.log ('hi')
+    recheckField.innerHTML =
+      "<p class='recheck'><strong>Please recheck your values</strong><br>It is an impossible scenario for the 'team batting second' to score 5 runs more than the revised target</p>";
+    recheckField.style.display = "block";
+    return;
+  }
   if (tBF === "yourTeam") {
     runRateYT = (runs / balls) * 6;
     if (
       bowledTBS === "yes" ||
-      document.querySelectorAll('input[name="rgBowledTBS"]:disabled').length === 2
+      document.querySelectorAll('input[name="rgBowledTBS"]:disabled').length ===
+        2
     ) {
       runRateYO = (rgTBSScore.value / balls) * 6;
     } else if (bowledTBS === "no") {

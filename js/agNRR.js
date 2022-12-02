@@ -7,6 +7,16 @@ const required1 = document.querySelector(".required1");
 const defh4 = document.querySelector(".defh4");
 const defh1 = document.querySelector(".defh1");
 
+function isNumberKey(evt) {
+  var charCode = evt.which ? evt.which : evt.keyCode;
+  if (
+    (charCode > 31 && (charCode < 48 || charCode > 57)) ||
+    (evt.target.value.length == 0 && evt.which == 48)
+  )
+    return false;
+  return true;
+}
+
 const checkEmpty = () => {
   const emptyFields = document.querySelectorAll('input[type="number"]');
   for (const emptyField of emptyFields) {
@@ -58,6 +68,16 @@ const agNRR = () => {
       break;
     }
   }
+  const emptyFields = document.querySelectorAll('input[type="number"]');
+  for (const emptyField of emptyFields) {
+    if (emptyField.value === "") {
+      return;
+    }
+  }
+  if (wBFs[0].checked === false && wBFs[1].checked === false) {
+    return;
+  }
+
   if (tBF === "yourTeam") {
     runRateYT = (dlsPar.value / balls) * 6;
     console.log(runRateYT);
