@@ -64,7 +64,7 @@ const agNRR = () => {
   for (const wBF of wBFs) {
     if (wBF.checked) {
       tBF = wBF.id;
-      console.log(tBF);
+      //console.log(tBF);
       break;
     }
   }
@@ -80,14 +80,14 @@ const agNRR = () => {
 
   if (tBF === "yourTeam") {
     runRateYT = (dlsPar.value / balls) * 6;
-    console.log(runRateYT);
+    //console.log(runRateYT);
     runRateYO = (agTBS.value / balls) * 6;
   } else if (tBF === "yourOpponent") {
     runRateYO = (dlsPar.value / balls) * 6;
     runRateYT = (agTBS.value / balls) * 6;
   }
   agNRR = (runRateYT - runRateYO).toFixed(3);
-  console.log(agNRR);
+  //console.log(agNRR);
   if (agNRR > 0) {
     defh4.innerHTML = "Net run rate of your team:";
     defh1.innerHTML = `+${agNRR}`;

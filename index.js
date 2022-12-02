@@ -83,7 +83,7 @@ const checkEmpty = () => {
   required2.style.display = "inline";
   required1.textContent = "";
   required2.textContent = "";
-  
+
   const emptyFields = document.querySelectorAll('input[type="number"]');
   for (const emptyField of emptyFields) {
     if (emptyField.value === "") {
@@ -155,9 +155,9 @@ const defNRR = () => {
   defh1.innerHTML = "";
   defh1.style.backgroundColor = "transparent";
   //console.log((2 * 5) / defYTO.value);
-  console.log(parseFloat(defYTO.value));
-  console.log(parseFloat(defOPI.value));
-  console.log(parseFloat(defYTO.value) < parseFloat(defOPI.value));
+  //console.log(parseFloat(defYTO.value));
+  //console.log(parseFloat(defOPI.value));
+  //console.log(parseFloat(defYTO.value) < parseFloat(defOPI.value));
   //console.log(isNaN(parseFloat(defYTO.value)));
 
   const emptyFields = document.querySelectorAll('input[type="number"]');
@@ -193,10 +193,9 @@ const defNRR = () => {
     parseFloat(defYTO.value) > parseFloat(defOPI.value) ||
     parseFloat(defYOO.value) > parseFloat(defOPI.value)
   ) {
-    
     recheckField.style.display = "block";
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Are you sure you didn't mistype anything?</strong><br> Overs faced by 'Your Team' or 'Your Opponent' cannot be greater than the 'Overs per Innings'</p>";
+      "<p class='recheck'><strong>Are you sure you didn't mistype anything?</strong><br> Overs faced by 'your team' or 'your opponent' cannot be greater than the 'overs per innings'</p>";
 
     /* alert(
       "Overs faced by 'Your Team' or 'Your Opponent' cannot be greater than the 'Overs per Innings'"
@@ -230,7 +229,7 @@ const defNRR = () => {
     defYOB.value !== ""
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Please recheck your values and choices</strong><br> In an ODI match, there is no possible scenario that both the teams haven't faced the full 'overs per innings' and are both not 'all out'.</p>";
+      "<p class='recheck'><strong>Please recheck your values and choices</strong><br>In an ODI match, there is no possible scenario that both the teams haven't faced the full 'overs per innings' and are both not 'all out'</p>";
     recheckField.style.display = "block";
     return;
   }
@@ -240,7 +239,7 @@ const defNRR = () => {
     defBowledYTs[1].checked === true
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Seems like you've messed up the values</strong><br>According to your data, 'Your Team' has not yet surpassed 'Your Opponent's' score, not 'all out' and have overs left to bat, which is an impossible scenario in a completed match </p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values</strong><br>According to your data, 'Your team' has not yet surpassed 'your oponent's' score,are not 'all out' and have overs left to bat, which is an impossible scenario in a completed match </p>";
     recheckField.style.display = "block";
     return;
   }
@@ -250,43 +249,43 @@ const defNRR = () => {
     (defBowledYOs[1].checked = true)
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Seems like you've messed up the values</strong><br>According to your data, 'Your Opponent' has not yet surpassed 'Your Team's' score, not 'all out' and have overs left to bat, which is an impossible scenario in a completed match </p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values</strong><br>According to your data, 'Your opponent' has not yet surpassed 'your team's' score, are not 'all out' and have overs left to bat, which is an impossible scenario in a completed match </p>";
     recheckField.style.display = "block";
     return;
   }
-  
+
   if (
     bowledYT === "yes" ||
     document.querySelectorAll('input[name="defBowledYT"]:disabled').length === 2
   ) {
     const rrPerBall = defYTS.value / (defOPI.value * 6);
     runRateYT = rrPerBall * 6;
-    console.log(runRateYT);
+    //console.log(runRateYT);
   }
   if (bowledYT === "no") {
     const rrPerBall =
       defYTS.value / (defYTO.value * 6 + parseFloat(defYTB.value));
     runRateYT = rrPerBall * 6;
-    console.log(runRateYT);
+    //console.log(runRateYT);
   }
   if (
     bowledYO === "yes" ||
     document.querySelectorAll('input[name="defBowledYO"]:disabled').length === 2
   ) {
     const rrPerBall = defYOS.value / (defOPI.value * 6);
-    console.log(runRateYO);
+    //console.log(runRateYO);
 
     runRateYO = rrPerBall * 6;
-    console.log(runRateYO);
+    //console.log(runRateYO);
   }
   if (bowledYO === "no") {
     const rrPerBall =
       defYOS.value / (defYOO.value * 6 + parseFloat(defYOB.value));
     runRateYO = rrPerBall * 6;
-    console.log(runRateYO);
+    //console.log(runRateYO);
   }
   defNRR = (runRateYT - runRateYO).toFixed(3);
-  console.log(defNRR);
+  //console.log(defNRR);
   if (defNRR > 0) {
     defh4.innerHTML = "Net run rate of your team:";
     defh1.innerHTML = `+${defNRR}`;

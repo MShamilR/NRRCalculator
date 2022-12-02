@@ -128,11 +128,11 @@ const rgNRR = () => {
   defh1.innerHTML = "";
   defh1.style.backgroundColor = "transparent";
   const runs = rgTarget.value - 1;
-  console.log(runs); ////
+  //console.log(runs); ////
   const balls = rgOvers.value * 6;
-  console.log(balls); ////
+  //console.log(balls); ////
   const ballsTBS = rgTBSOvers.value * 6 + parseFloat(rgTBSBalls.value);
-  console.log(ballsTBS); ////
+  //console.log(ballsTBS); ////
   let tBF;
   let runRateYT;
   let runRateYO;
@@ -166,20 +166,20 @@ const rgNRR = () => {
   if (parseFloat(rgTBSOvers.value) > parseFloat(rgOvers.value)) {
     recheckField.style.display = "block";
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Are you sure you didn't mistype anything?</strong><br> Overs faced by the 'team batting second' cannot be greater than the 'Revised Overs'</p>";
+      "<p class='recheck'><strong>Are you sure you didn't mistype anything?</strong><br>Overs faced by the 'team batting second' cannot be greater than 'revised overs'</p>";
     return;
   }
   for (const wBF of wBFs) {
     if (wBF.checked) {
       tBF = wBF.id;
-      console.log(tBF);
+      //console.log(tBF);
       break;
     }
   }
   for (const rgBowledTBS of rgBowledTBSs) {
     if (rgBowledTBS.checked) {
       bowledTBS = rgBowledTBS.id;
-      console.log(bowledTBS);
+      //console.log(bowledTBS);
       break;
     }
   }
@@ -189,14 +189,14 @@ const rgNRR = () => {
     rgBowledTBSs[1].checked === true
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Seems like you've messed up the values</strong><br>According to your data, the 'Team batting second' has not yet surpassed 'Revised Target', not 'all out' and have overs left to bat, which is an impossible scenario in a completed match </p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values</strong><br>According to your data, the 'team batting second' has not yet surpassed the 'revised target', are not 'all out' and have overs left to bat, which is an impossible scenario in a completed match </p>";
     recheckField.style.display = "block";
     return;
   }
   if (parseFloat(rgTBSScore.value) > parseFloat(runs) + parseFloat(6)) {
-    console.log ('hi')
+    //console.log ('hi')
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Please recheck your values</strong><br>It is an impossible scenario for the 'team batting second' to score 5 runs more than the revised target</p>";
+      "<p class='recheck'><strong>Please recheck your values</strong><br>It is an impossible scenario for the 'team batting second' to score 5 runs more than the 'revised target'</p>";
     recheckField.style.display = "block";
     return;
   }
@@ -224,10 +224,10 @@ const rgNRR = () => {
       runRateYT = (rgTBSScore.value / ballsTBS) * 6;
     }
   }
-  console.log(runRateYT);
-  console.log(runRateYO);
+  //console.log(runRateYT);
+  //console.log(runRateYO);
   rgNRR = (runRateYT - runRateYO).toFixed(3);
-  console.log(rgNRR);
+  //console.log(rgNRR);
   if (rgNRR > 0) {
     defh4.innerHTML = "Net run rate of your team:";
     defh1.innerHTML = `+${rgNRR}`;
