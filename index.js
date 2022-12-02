@@ -18,6 +18,11 @@ const balls2 = document.querySelector(".balls2");
 const radio1 = document.querySelector(".radio1");
 const radio2 = document.querySelector(".radio2");
 
+const onloadFunc = () => {
+  toggleDisable(defYTO, defYTB, balls1, defBowledYTs, radio1, required1);
+  toggleDisable(defYOO, defYOB, balls2, defBowledYOs, radio2, required2);
+};
+
 function isNumberKey(evt) {
   var charCode = evt.which ? evt.which : evt.keyCode;
   if (
@@ -246,7 +251,7 @@ const defNRR = () => {
   if (
     parseFloat(defYOS.value) <= parseFloat(defYTS.value) &&
     parseFloat(defYOO.value) < parseFloat(defOPI.value) &&
-    (defBowledYOs[1].checked === true)
+    defBowledYOs[1].checked === true
   ) {
     recheckField.innerHTML =
       "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>According to your data, <strong>Your Opponent</strong> has not yet surpassed <strong>Your Team</strong> score, are <strong>not all out</strong> and have overs left to bat, which is an impossible scenario in a completed match </p>";

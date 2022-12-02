@@ -14,6 +14,10 @@ const radio1 = document.querySelector(".radio1");
 const recheckField = document.querySelector(".recheckField");
 const recheckText = document.querySelector(".recheck");
 
+const onloadFunc = () => {
+  toggleDisable(rgTBSOvers, rgTBSBalls);
+};
+
 function isNumberKey(evt) {
   var charCode = evt.which ? evt.which : evt.keyCode;
   if (
