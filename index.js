@@ -195,7 +195,7 @@ const defNRR = () => {
   ) {
     recheckField.style.display = "block";
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Are you sure you didn't mistype anything?</strong><br> Overs faced by 'your team' or 'your opponent' cannot be greater than the 'overs per innings'</p>";
+      "<p class='recheck'><strong>Are you sure you didn't mistype anything?</strong><br> Overs faced by <strong>Your Team</strong> or <strong>Your Opponent</strong> cannot be greater than the <strong>Overs per Innings</strong></p>";
 
     /* alert(
       "Overs faced by 'Your Team' or 'Your Opponent' cannot be greater than the 'Overs per Innings'"
@@ -229,7 +229,7 @@ const defNRR = () => {
     defYOB.value !== ""
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Please recheck your values and choices</strong><br>In an ODI match, there is no possible scenario that both the teams haven't faced the full 'overs per innings' and are both not 'all out'</p>";
+      "<p class='recheck'><strong>Please recheck your values and choices.</strong><br>In an ODI match, there is no possible scenario that both the teams haven't faced the full <strong>Overs per Innings</strong> and are <strong>both not all out</strong></p>";
     recheckField.style.display = "block";
     return;
   }
@@ -239,17 +239,17 @@ const defNRR = () => {
     defBowledYTs[1].checked === true
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Seems like you've messed up the values</strong><br>According to your data, 'Your team' has not yet surpassed 'your oponent's' score,are not 'all out' and have overs left to bat, which is an impossible scenario in a completed match </p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>According to your data, <strong>Your Team</strong> has not yet surpassed <strong>Your Opponent</strong> score, are <strong>not all out</strong> and have overs left to bat, which is an impossible scenario in a completed match </p>";
     recheckField.style.display = "block";
     return;
   }
   if (
     parseFloat(defYOS.value) <= parseFloat(defYTS.value) &&
     parseFloat(defYOO.value) < parseFloat(defOPI.value) &&
-    (defBowledYOs[1].checked = true)
+    (defBowledYOs[1].checked === true)
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Seems like you've messed up the values</strong><br>According to your data, 'Your opponent' has not yet surpassed 'your team's' score, are not 'all out' and have overs left to bat, which is an impossible scenario in a completed match </p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>According to your data, <strong>Your Opponent</strong> has not yet surpassed <strong>Your Team</strong> score, are <strong>not all out</strong> and have overs left to bat, which is an impossible scenario in a completed match </p>";
     recheckField.style.display = "block";
     return;
   }

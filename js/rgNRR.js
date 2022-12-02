@@ -166,7 +166,7 @@ const rgNRR = () => {
   if (parseFloat(rgTBSOvers.value) > parseFloat(rgOvers.value)) {
     recheckField.style.display = "block";
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Are you sure you didn't mistype anything?</strong><br>Overs faced by the 'team batting second' cannot be greater than 'revised overs'</p>";
+      "<p class='recheck'><strong>Are you sure you didn't mistype anything?</strong><br>Overs faced by the <strong>team batting second</strong> cannot be greater than <strong>revised overs</strong></p>";
     return;
   }
   for (const wBF of wBFs) {
@@ -189,14 +189,14 @@ const rgNRR = () => {
     rgBowledTBSs[1].checked === true
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Seems like you've messed up the values</strong><br>According to your data, the 'team batting second' has not yet surpassed the 'revised target', are not 'all out' and have overs left to bat, which is an impossible scenario in a completed match </p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>According to your data, the <strong>team batting second</strong> has not yet surpassed the 'revised target', are <strong>not all out</strong> and have overs left to bat, which is an impossible scenario in a completed match </p>";
     recheckField.style.display = "block";
     return;
   }
   if (parseFloat(rgTBSScore.value) > parseFloat(runs) + parseFloat(6)) {
     //console.log ('hi')
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Please recheck your values</strong><br>It is an impossible scenario for the 'team batting second' to score 5 runs more than the 'revised target'</p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>It is an impossible scenario for the <strong>team batting second</strong>' to score 5 runs more than the <strong>revised target</strong></p>";
     recheckField.style.display = "block";
     return;
   }
