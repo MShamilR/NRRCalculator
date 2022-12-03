@@ -220,14 +220,14 @@ const rgNRR = () => {
     rgBowledTBSs[1].checked === true
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>According to your data, the <strong>team batting second</strong> has not yet reached the 'revised target', are <strong>not all out</strong> and have overs left to bat, which is an impossible scenario in a completed match </p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>According to your data, the <strong>team batting second</strong> has not yet reached the <strong>revised target</strong>, are <strong>not all out</strong> and have overs left to bat, which is an impossible scenario in a completed match </p>";
     recheckField.style.display = "block";
     return;
   }
   if (parseFloat(rgTBSScore.value) > parseFloat(runs) + parseFloat(6)) {
     //console.log ('hi')
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>It is an impossible scenario for the <strong>team batting second</strong>' to score 5 runs more than the <strong>revised target</strong></p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>It is an impossible scenario for the <strong>team batting second</strong> to score 5 runs more than the <strong>revised target</strong></p>";
     recheckField.style.display = "block";
     return;
   }
