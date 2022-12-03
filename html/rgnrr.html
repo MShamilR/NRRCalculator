@@ -30,13 +30,14 @@
             <fieldset>
                 <label class="marginRight">
                     Revised Target
-                    <input type="number" placeholder="Enter target" class="rgTarget" onkeypress="return isNumberKey(event)"/>
+                    <input type="number" placeholder="Enter target" class="rgTarget"
+                        onkeypress="return isNumberKey(event)" onkeyup="tbsScoreError()" />
                 </label>
                 &nbsp;
                 <label>
                     Revised Overs
                     <input type="number" placeholder="Enter overs" class="rgOvers"
-                        onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls)" onkeypress="return isNumberKey(event)"/>
+                        onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls);tbsScoreError()" onkeypress="return isNumberKey(event)" />
                 </label>
             </fieldset>
 
@@ -45,7 +46,7 @@
                     </span></p>
 
                 <label for="yourTeam">Your Team</label>
-                <input type="radio" name="wBF" id="yourTeam" onchange="removeRequired1()"/>
+                <input type="radio" name="wBF" id="yourTeam" onchange="removeRequired1()" />
 
                 &nbsp;
 
@@ -56,11 +57,13 @@
 
             <fieldset>
                 <label class="marginRight">Runs scored by team batting second
-                    <input type="number" placeholder="Enter score" class="rgTBSScore" onkeypress="return isNumberKey(event)"/>
+                    <input type="number" placeholder="Enter score" class="rgTBSScore"
+                        onkeypress="return isNumberKey(event);" onkeyup="tbsScoreError()" />
                 </label>
                 <label class="marginRight">
                     In Overs
-                    <input type="number" placeholder="Enter overs" class="rgTBSOvers" onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls)" onkeypress="return isNumberKey(event)"/>
+                    <input type="number" placeholder="Enter overs" class="rgTBSOvers"
+                        onkeyup="toggleDisable(rgTBSOvers,rgTBSBalls);tbsScoreError()" onkeypress="return isNumberKey(event)" />
                 </label>
                 <label class="balls1">
                     Balls
@@ -83,7 +86,7 @@
                     &nbsp;
 
                     <label for="no">No</label>
-                    <input type="radio" name="rgBowledTBS" id="no" onchange="removeRequired2()"/>
+                    <input type="radio" name="rgBowledTBS" id="no" onchange="removeRequired2()" />
                 </div>
 
             </fieldset>

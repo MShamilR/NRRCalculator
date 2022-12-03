@@ -88,6 +88,33 @@ const removeRequired2 = () => {
   required2.textContent = "";
 };
 
+const tbsScoreError = () => {
+  const runs = parseFloat(rgTarget.value) - 1;
+  if (parseFloat(rgTBSScore.value) > parseFloat(runs) + parseFloat(6)) {
+    rgTBSScore.classList.add("error");
+  }
+  if (parseFloat(rgTBSScore.value) <= parseFloat(runs) + parseFloat(6)) {
+    if (rgTBSScore.classList.contains("error")) {
+      rgTBSScore.classList.remove("error");
+    }
+  }
+  if (parseFloat(rgTBSScore.value) > parseFloat(runs)) {
+    for (const rgBowledTBS of rgBowledTBSs) {
+      rgBowledTBS.setAttribute("disabled", "");
+      rgBowledTBS.checked = false;
+    }
+    radio1.style.opacity = "0.25";
+    required2.style.display = "none";
+  }
+  if (parseFloat(rgTBSScore.value) <= parseFloat(runs)) {
+    for (const rgBowledTBS of rgBowledTBSs) {
+      rgBowledTBS.removeAttribute("disabled");
+    }
+    radio1.style.opacity = "1";
+    required2.style.display = "inline";
+  }
+};
+
 const toggleDisable = (overs, balls) => {
   if (
     (overs.classList.contains("error") &&
@@ -193,7 +220,7 @@ const rgNRR = () => {
     rgBowledTBSs[1].checked === true
   ) {
     recheckField.innerHTML =
-      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>According to your data, the <strong>team batting second</strong> has not yet surpassed the 'revised target', are <strong>not all out</strong> and have overs left to bat, which is an impossible scenario in a completed match </p>";
+      "<p class='recheck'><strong>Seems like you've messed up the values.</strong><br>According to your data, the <strong>team batting second</strong> has not yet reached the 'revised target', are <strong>not all out</strong> and have overs left to bat, which is an impossible scenario in a completed match </p>";
     recheckField.style.display = "block";
     return;
   }
